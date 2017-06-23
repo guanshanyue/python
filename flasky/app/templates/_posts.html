@@ -1,3 +1,8 @@
+<div>
+    {% if current_user.can(Permission.WRITE_ARTICLES) %}
+    {{ wtf.quick_form(form) }}
+    {% endif %}
+</div>
 <ul class="posts">
     {% for post in posts %}
     <li class="post">
